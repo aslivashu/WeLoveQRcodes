@@ -68,10 +68,3 @@ Contributing
 
 
 
-
-If you'd like, I can:
-- Suggest a small code cleanup patch for script.js to remove setTimeout and handle the generated element more robustly (I can provide a patch you can apply),
-- Draft a minimal CONTRIBUTING.md,
-- Draft a simple GitHub Actions workflow to deploy the site to GitHub Pages automatically.
-
-Tell me which of the above you'd like next (README commit, code cleanup patch, deploy workflow, or CONTRIBUTING.md) and I will prepare the file content you can paste/commit.  

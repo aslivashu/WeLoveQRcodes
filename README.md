@@ -66,23 +66,8 @@ Contributing
   3. Make changes, add tests/docs if necessary.
   4. Open a pull request describing your changes.
 
-License
-- Add a LICENSE file to the repo. If you want permissive reuse, add an MIT license (common choice).
 
-How to add this README to the repository
-- Create a branch and open a PR (recommended):
-  git checkout -b add-readme
-  # create README.md and paste this content
-  git add README.md
-  git commit -m "Add project README"
-  git push -u origin add-readme
-  # open a Pull Request on GitHub
-- Or commit directly to main if you prefer:
-  git checkout main
-  # add README.md
-  git add README.md
-  git commit -m "Add README"
-  git push origin main
+
 
 If you'd like, I can:
 - Suggest a small code cleanup patch for script.js to remove setTimeout and handle the generated element more robustly (I can provide a patch you can apply),

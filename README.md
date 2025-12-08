@@ -3,7 +3,7 @@
 WeLoveQRcodes is a small, client-side QR code generator built with qrcodejs. It provides a minimal UI to enter text, generate a QR code, and download it as a PNG. The project is intended as a simple static web app (index.html + script.js + styles.css) that can be hosted anywhere (GitHub Pages, Netlify, static server).
 
 Live demo
-- (If you enable GitHub Pages for this repo you can place the site at `https://<your-username>.github.io/weloveqrcode/`)
+- (If you enable GitHub Pages for this repo you can place the site at `https://aslivashu.github.io/WeLoveQRcodes/`)
 
 Features
 - Enter any text or URL and generate a QR code in the browser

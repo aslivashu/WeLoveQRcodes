@@ -37,7 +37,6 @@ This project will be licensed under the MIT License - see the [LICENSE](LICENSE)
 
 **Sarthak Tyagi (aslivashu)**
 
-* [GitHub Profile](https://github.com/aslivashu)
 * [LinkedIn Profile](https://www.linkedin.com/in/sarthaktyagi2236999)
 
 ---

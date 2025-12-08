@@ -1,139 +1,366 @@
-:root {
-  font-size: 62.5%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
+﻿/* 1. The Page Background - distinctive but soft */
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eae6e5;
-  background-color: #2b303a;
-  height: 100vh;
-}
-@media screen and (max-width: 50em) {
-  body {
-    flex-direction: column;
-    height: 100%;
-  }
-}
-body .heading {
-  margin: 3rem 0 5rem 0;
-}
-body .title,
-body .sub-title {
-  font-size: 4rem;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  color: #12130f;
-  color: #eee5e9;
-}
-body .sub-title {
-  font-size: 1.5rem;
-  color: #eee5e9;
-  opacity: 0.5;
-}
-body .user-input-section {
+  background-color: #F3F4F6;
+  background-image: radial-gradient(#E0E7FF 1px, transparent 1px);
+  background-size: 20px 20px;
+  font-family: 'Inter', sans-serif;
+  
+  /* Layout Logic */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 40%;
+  min-height: 100vh; /* Forces page to be at least as tall as screen */
+  margin: 0;
 }
-@media screen and (max-width: 50em) {
-  body .user-input-section {
-    width: 100%;
-    margin: 2rem 0 0 0;
-  }
+
+/* 2. The Main "App Card" Container */
+.main-container {
+  background: #FFFFFF;
+  width: 900px;
+  max-width: 90%;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 15px 25px -5px rgba(0, 0, 0, 0.08);
+  padding: 3rem;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  
+  /* LAYOUT FIX: */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;       /* Connects to the Logo */
+  margin-bottom: auto; /* Pushes the Footer to the very bottom */
 }
-body .user-input-section .user-input {
+
+/* 3. Left Side - Typography & Inputs */
+.input-section {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1.5rem;
+}
+
+h1.brand-title {
+  font-size: 2rem;
+  color: #111827; /* Almost Black */
+  font-weight: 800;
+  margin: 0;
+}
+
+p.subtitle {
+  color: #6B7280; /* Gray text */
+  margin-top: -1rem;
+}
+
+input[type="text"] {
   width: 100%;
+  padding: 16px;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
 }
-body .user-input-section .user-input label {
-  font-size: 1.5rem;
-  font-family: "Poppins", sans-serif;
-}
-body .user-input-section .user-input input {
-  width: 80%;
-  max-width: 35rem;
-  font-size: 16px;
+
+input[type="text"]:focus {
   outline: none;
+  border-color: #6366F1; /* Your Purple */
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); /* Soft Glow */
+}
+
+/* 4. The Buttons - Fixing the "Squished" look */
+.btn-primary {
+  background-color: #6366F1;
+  color: white;
+  padding: 14px 28px;
   border: none;
-  border-radius: 0.5rem;
-  background-color: #666666;
-  padding: 1.5rem 1rem;
-  margin: 1rem 1rem 2rem 1rem;
-  color: #fff;
-}
-body .user-input-section .user-input input::placeholder {
-  color: #fff;
-}
-body .button {
-  outline: none;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 1.5rem 2.5rem;
-  margin-bottom: 3rem;
-  background-color: #5b92799d;
-  background-color: #92dce5;
-  color: black;
-  font-family: sans-serif;
-  font-size: 1.6rem;
-}
-button:hover{
-  opacity: .7;
-}
-body .qr-code-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-}
-@media screen and (max-width: 50em) {
-  body .qr-code-container {
-    width: 100%;
-    margin: 8rem 0;
-  }
-}
-body .qr-code-container .qr-code {
-  display: flex;
-  border-radius: 1rem;
-  background-color: #7c7c7c33;
-  width: fit-content;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem;
-}
-body .qr-code-container .qr-code button {
-  display: flex;
-  justify-content: center;
-  background-color: #1f1f1f;
-  color: #eae6e5;
-  border: none;
-  outline: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
   width: 100%;
-  margin-top: 2.5rem;
-  border-radius: 1rem;
-}
-body .qr-code-container .qr-code button a {
-  font-family: sans-serif;
-  font-size: 1.5rem;
-  width: 100%;
-  height: 100%;
+  font-size: 1rem;
   text-decoration: none;
-  color: #eae6e5;
-  padding: 1rem;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 100, 255, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 5px rgba(100, 100, 255, 0.2);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary:hover {
+  background-color: #4F46E5;
+}
+
+/* 5. Right Side - The Result Card */
+.result-section {
+  flex: 0 0 300px; /* Fixed width for stability */
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.qr-image {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  margin-bottom: 1rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-placeholder {
+  text-align: center;
+  color: #9CA3AF;
+}
+
+.qr-placeholder p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* The "Secondary" button style to fix the layout issue */
+.btn-secondary {
+  background: transparent;
+  color: #6366F1;
+  border: 2px solid #6366F1;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: #EEF2FF;
+}
+
+/* Logo styling */
+.brand-title .logo {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.top-logo {
+  /* Pushes the group down from the top */
+  margin-top: auto;
+  margin-bottom: 1rem; /* Keeps logo close to the card */
+  text-align: center;
+}
+
+.top-logo img {
+  width: 40rem;
+  height: 8rem;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Error message */
+.error-message {
+  color: #EF4444;
+  background-color: #FEF2F2;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  display: none;
+}
+
+.download-button {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  margin: 10px auto 0;
+  text-align: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.regenerate-button {
+  margin-top: 0.5rem;
+}
+
+/* Result Reveal Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.qr-image img {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (FINAL POLISH)
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* 1. Change Body Layout for Mobile */
+  body {
+    justify-content: flex-start; /* Stops centering, lets us control spacing */
+    padding-top: 1.5rem; /* Adds breathing room at the very top */
+  }
+
+  /* 2. Logo Spacing */
+  .top-logo {
+    margin-top: 0.5rem; /* Little extra nudge from top */
+    margin-bottom: 1.5rem;
+  }
+  
+  .top-logo img {
+    max-width: 220px; /* Keep logo readable but not huge */
+    height: auto;
+  }
+
+  /* 3. Main Card Layout */
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    width: 85%;
+    margin-bottom: 2rem; /* Push footer away slightly */
+  }
+
+  .input-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 4. Transparent Result Section (No double-card look) */
+  .result-section {
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .qr-image {
+    margin: 0 auto;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    background: white; /* Ensure QR box stays white */
+  }
+
+  /* 5. Full Width Buttons */
+  .btn-primary, 
+  .download-button, 
+  .btn-secondary {
+    width: 100%;
+    display: block;
+  }
+  
+  /* 6. Sticky Footer Logic */
+  .footer-credits {
+    margin-top: auto; /* MAGIC: Pushes footer to the bottom of the screen */
+    width: 100%;
+    padding-bottom: 2rem; /* Adds space before the bottom edge of phone */
+    background-color: transparent; /* Ensures it blends in */
+  }
+}
+
+/* Footer Styling */
+.footer-credits {
+  /* The container above pushes this to the bottom, so we just add padding */
+  padding-bottom: 2rem; 
+  width: 100%;
+  text-align: center;
+  color: #6B7280;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer-name {
+  font-weight: 600;
+  color: #111827; /* Darker text for name */
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #6B7280; /* Standard Gray */
+  font-weight: 500;
+  
+  /* Structure for the "Pill" shape */
+  padding: 10px 20px;
+  border-radius: 50px; /* Fully rounded corners */
+  border: 1px solid transparent; /* Prevents layout shift on hover */
+  
+  /* Smooth Physics-based Animation */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+  /* THE COOL EFFECT: */
+  background-color: #FFFFFF; /* Turns white */
+  color: #111827;            /* Text turns Jet Black (No more blueish) */
+  border-color: #E5E7EB;     /* Subtle border appears */
+  
+  /* 3D Lift Animation */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1); /* Soft shadow drop */
+}
+
+/* Extra Touch: Animate the Icon specifically */
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1); /* Scales the logo slightly */
+}
+
+.divider-line {
+  width: 50px;
+  height: 2px;
+  background-color: #E5E7EB;
+  margin: 0 auto;
+  border-radius: 1px;
 }

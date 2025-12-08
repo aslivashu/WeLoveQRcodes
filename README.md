@@ -1,70 +1,43 @@
 # WeLoveQRcodes
 
-WeLoveQRcodes is a small, client-side QR code generator built with qrcodejs. It provides a minimal UI to enter text, generate a QR code, and download it as a PNG. The project is intended as a simple static web app (index.html + script.js + styles.css) that can be hosted anywhere (GitHub Pages, Netlify, static server).
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Live demo
-- (If you enable GitHub Pages for this repo you can place the site at `https://aslivashu.github.io/WeLoveQRcodes/`)
+A modern, client-side QR code generator that creates high-quality QR codes with a **custom embedded logo watermark**. Built with vanilla JavaScript and designed with a responsive, glass-morphic UI.
 
-Features
-- Enter any text or URL and generate a QR code in the browser
-- PNG download button generated automatically after QR creation
-- Small, dependency-free UI (uses qrcodejs from CDN)
-- Simple, responsive layout and basic styling
+**[Live Demo](https://aslivashu.github.io/WeLoveQRcodes/)**
 
-Repository structure
-- index.html — main HTML page with the UI and script includes
-- script.js — QR generation logic and download behavior
-- styles.css — styling for layout and appearance
-- (optional) README.md — this file
-- (optional) LICENSE — add a license file if you want to publish
-
-Quick start (local)
-1. Clone the repository:
-   git clone https://github.com/aslivashu/weloveqrcode.git
-2. Open the site:
-   - Simple: Open index.html in your browser (double‑click or drag file)
-   - Recommended (serves over HTTP): run a local server:
-     - Python 3: python -m http.server 8000
-     - Then open http://localhost:8000 in your browser
-
-Usage
-1. Type text or a URL into the input field.
-2. Click the "Generate" button.
-3. A QR image appears and a "Download" button is added below it. Click the Download button to save a PNG copy.
-
-How the app works (short overview)
-- index.html includes qrcodejs via CDN and app's script.js.
-- script.js:
-  - Listens for the Generate button click.
-  - Reads the input value and calls generate(user_input).
-  - The generate(user_input) function creates a new QRCode instance in the .qr-code container with options:
-    - width/height: 180
-    - colorDark: #000000, colorLight: #ffffff
-    - correctLevel: QRCode.CorrectLevel.H
-  - After the QR is rendered the script creates a Download button and sets the download link to the data URL from either the generated <img> or <canvas>.
-
-Customizing the generator
-- Change size: edit the width and height options in script.js.
-- Change colors: set colorDark and colorLight.
-- Change error correction level: modify correctLevel (L, M, Q, H).
-- Replace qrcodejs with another library if you need more features (logo embedding, SVG output, better accessibility).
-
-Notes, improvements & suggestions
-- The current code creates a new Download button each time a QR is generated; the script attempts to clear the .qr-code container before generating but you may want to explicitly remove any previous download button to avoid duplicates.
-- The download link is set using setTimeout to wait for the library to finish rendering. A robust approach is to detect whether the library returned an <img> or <canvas> element directly and use its availability rather than relying on setTimeout.
-- Accessibility: add labels and ARIA attributes for the input and buttons; make sure color contrast meets WCAG for users with low vision.
-- Validation: handle and show user feedback for empty input (rather than console.log).
-- Prevent XSS: qrcodejs encodes the input into QR binary data so it does not directly render user strings as HTML, but sanitize/validate if you display the raw input elsewhere.
-
-Potential bug to watch
-- script.js calls generate({ value: "https://codepen.io/coding_dev_" }) at the bottom for an initial demo. That works because generate expects an object with a `.value` property (or an input element with `.value`). If you refactor generate to accept just a string, update that call accordingly.
-
-Contributing
-- Contributions are welcome. Suggested steps:
-  1. Fork the repo.
-  2. Create a new branch: git checkout -b feat/some-feature
-  3. Make changes, add tests/docs if necessary.
-  4. Open a pull request describing your changes.
+<img width="991" height="596" alt="image" src="https://github.com/user-attachments/assets/7ed5c723-fd5f-4d55-8b7b-d4639d3a59cd" />
 
 
+## 🚀 Features
 
+* **Custom Watermark:** Automatically embeds a branded logo into the center of every QR code.
+* **High Error Correction:** Uses `CorrectLevel.H` to ensure QR codes remain scannable.
+* **Instant Download:** Generates a composite PNG image (QR + Logo) for immediate download.
+* **Mobile-First Design:** Fully responsive layout that stacks perfectly on phones and centers elegantly on desktops.
+* **Modern UI:** Features glass-morphic cards and interactive 3D buttons.
+
+## 🛠️ Tech Stack
+
+* **Frontend:** HTML5, CSS3 (Flexbox, Animations), JavaScript (ES6)
+* **Library:** qrcodejs
+
+## 📦 Usage
+
+1.  Open the website (or `index.html`).
+2.  Type any URL or text into the input field.
+3.  Click **Generate**.
+4.  Click the **Download** button to save your watermarked QR code.
+
+## 📄 License
+
+This project will be licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Sarthak Tyagi (aslivashu)**
+
+* [LinkedIn Profile](https://www.linkedin.com/in/sarthaktyagi2236999)
+
+---
+*Making the web more accessible, one QR at a time.

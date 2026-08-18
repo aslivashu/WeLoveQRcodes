@@ -29,6 +29,15 @@ A modern, client-side QR code generator that creates high-quality QR codes with 
 3.  Click **Generate**.
 4.  Click the **Download** button to save your watermarked QR code.
 
+
+   ## Contributing
+Contributions are always welcome! If you'd like to improve this weather app:
+1. **Fork** the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a **Pull Request**
+
 ## 📄 License
 
 This project will be licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

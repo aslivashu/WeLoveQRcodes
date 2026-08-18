@@ -1,6 +1,5 @@
 # WeLoveQRcodes
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A modern, client-side QR code generator that creates high-quality QR codes with a **custom embedded logo watermark**. Built with vanilla JavaScript and designed with a responsive, glass-morphic UI.
 
